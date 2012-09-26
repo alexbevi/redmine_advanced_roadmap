@@ -101,9 +101,9 @@
       <td align="left">
         <div class="tooltip">
           <%= tab %>
-          <font color="<%= color %>"><%= begin_strike %>
+          <font color="<%= color %>"><%= raw(begin_strike) %>
             <%= link_to_issue(issue, :project => (@project.id != issue.project.id)) %>
-          <%= end_strike %></font>
+          <%= raw(end_strike) %></font>
           <span class="tip">
             <table width="100%">
               <tr><td colspan="2"><%= link_to_issue(issue) %></td></tr>
