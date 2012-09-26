@@ -1,0 +1,7 @@
+<h2><%=l(:label_milestone_new)%></h2>
+<%= @milestone.inspect %>
+<% labelled_form_for :milestone, @milestone, :url => { :action => "add" } do |f| %>
+TEST
+<%= render :partial => 'milestones/form', :locals => { :f => f } %>
+<%= submit_tag l(:button_create) %>
+<% end %>
