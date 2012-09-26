@@ -46,8 +46,8 @@
 
 <% if issues.present? %>
 <fieldset class="related-issues"><legend><%= l(:label_related_issues) %></legend>
-<% form_tag({}) do %>
-<table class="list related-issues">
+<%= form_tag({}) do %>
+<table class="list related-issues" style="width: 100%">
   <thead>
     <% width = 73
         width -= 9 # estimated hours
