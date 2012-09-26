@@ -120,11 +120,11 @@
           </span>
         </div>
       </td>
-      <td align="center"><font color="<%= color %>"><%= begin_strike %><%= ("%.2f" % issue.estimated_hours) if issue.estimated_hours %><%= end_strike %></font></td>
+      <td align="center"><font color="<%= color %>"><%= raw(begin_strike) %><%= ("%.2f" % issue.estimated_hours) if issue.estimated_hours %><%= raw(end_strike) %></font></td>
       <% if User.current.allowed_to?(:view_time_entries, @project) %>
-        <td align="center"><font color="<%= color %>"><%= begin_strike %><%= "%.2f" % issue.spent_hours %><%= end_strike %></font></td>
+        <td align="center"><font color="<%= color %>"><%= raw(begin_strike) %><%= "%.2f" % issue.spent_hours %><%= raw(end_strike) %></font></td>
       <% end %>
-      <td align="center"><font color="<%= color %>"><%= begin_strike %><%= (("%.0f" % issue.done_ratio) + "%") %><%= end_strike %></font></td>
+      <td align="center"><font color="<%= color %>"><%= raw(begin_strike) %><%= (("%.0f" % issue.done_ratio) + "%") %><%= raw(end_strike) %></font></td>
       <% if User.current.allowed_to?(:view_time_entries, @project) %>
         <td align="center"><font color="<%= color %>"><%= begin_strike %><%= ("%.2f" % issue.rest_hours) if issue.estimated_hours or issue.spent_hours %><%= end_strike %></font></td>
         <% if !version.estimated_speed.nil? %>
