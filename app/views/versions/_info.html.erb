@@ -86,13 +86,13 @@
     issues.each do |issue|
         color = ""
         begin_strike = ""
-        end_strike = ""
+        end_strike   = ""
         if issue.estimated_hours && issue.done_ratio
           color = color_by_ratio(issue.spent_hours / ((issue.estimated_hours * issue.done_ratio) / 100.0))
         end
         if issue.closed?
-          begin_strike = "<strike>"
-          end_strike = "</strike>"
+          begin_strike = "<span style='text-decoration: line-through;'>"
+          end_strike   = "</span>"
         end 
     %>
     <tr class="hascontextmenu <%= cycle("odd", "even") %>">
